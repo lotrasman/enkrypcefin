@@ -8,6 +8,7 @@ int main()
 
 	const char* destPath("c:\\temp\\file2.txt");
 	encrypt encrypt(srcPath, destPath);
+	
 	printf("Enter 1 for Encrypt or 2 for Decrypt: "); 
 	scanf_s("%d", &decision);
 	if (decision == 1) {
