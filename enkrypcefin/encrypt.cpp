@@ -29,11 +29,11 @@ void encrypt::decrypt() {
 	int lintCount;
 	do {
 		// Cteni bytu 
-		lintCount = fread_s(&uchReadBuffer, 1, 1, 1, p_file2);
+		lintCount = fread_s(&uchReadBuffer, 1, 1, 1, p_file);
 		// Zasifrovat 
 		uchReadBuffer = uchReadBuffer - 1;
 		// Zápis bytu 
-		fwrite(&uchReadBuffer, 1, 1, p_file);
+		fwrite(&uchReadBuffer, 1, 1, p_file2);
 
 	} while (lintCount != 0);
 }
