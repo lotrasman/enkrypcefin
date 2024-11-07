@@ -1,24 +1,33 @@
 #pragma once
 #include <cstdio>
+#include <windows.h>
+#include <stdlib.h> 
+#include <time.h>
 class encrypt
 {
 public:
 	
-	encrypt(const char* srcFile, const char* destFile);
+	encrypt(LPCWSTR srcFile, unsigned int seed);
 	~encrypt();
-	void frencrypt();
-	void decrypt();
-
+	void fileopen();
+	void fileclose();
+	void Krypt();
+	void Test();
 
 
 private:
+
+	LPCWSTR sourceFile;
+	unsigned int seed;
 	
-	const char* sourceFile;
-	const char* destinationFile;
 
-	FILE* p_file;
-	FILE* p_file2;
+	
 
+	
+	HANDLE hFile;
+	HANDLE hFileMapping;
+	PBYTE p_mSourceFirstByte;
+	DWORD fileSize;
 
 };
 
